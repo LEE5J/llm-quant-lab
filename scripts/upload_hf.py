@@ -7,7 +7,7 @@ from huggingface_hub import HfApi
 def main():
     p = argparse.ArgumentParser(description="Upload quantized model folder to Hugging Face")
     p.add_argument("--local-dir", required=True)
-    p.add_argument("--repo-id", required=True, help="e.g. username/model-name-awq")
+    p.add_argument("--repo-id", required=True, help="e.g. username/model-name-w4a16")
     p.add_argument("--private", action="store_true")
     p.add_argument("--token", default=None)
     args = p.parse_args()

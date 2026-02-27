@@ -9,7 +9,7 @@
   ```bash
   python scripts/quantize_awq.py \
     --model-id <repo> \
-    --output-dir results/<name>-llmc-w4a16 \
+    --output-dir results/<name>-w4a16 \
     --trust-remote-code
   ```
 - GPTQ:
