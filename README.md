@@ -19,7 +19,9 @@ git clone https://github.com/LEE5J/llm-quant-lab.git
 cd llm-quant-lab
 python -m venv .venv
 source .venv/bin/activate
-pip install -r requirements.txt
+uv pip install -r requirements.txt
+# (optional) GPTQ
+# uv pip install -r requirements-gptq.txt
 ```
 
 환경변수 설정:

@@ -1,0 +1,4 @@
+# Optional GPTQ dependencies
+# NOTE: auto-gptq may require CUDA toolkit version alignment with torch build.
+# Current known issue on some servers: system CUDA 13.x vs torch cu124 mismatch.
+auto-gptq>=0.7.1
