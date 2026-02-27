@@ -1,0 +1,9 @@
+transformers>=4.46.0
+accelerate>=1.0.0
+optimum>=1.22.0
+auto-gptq>=0.7.1
+awq>=0.2.6
+huggingface_hub>=0.26.0
+torch>=2.4.0
+pyyaml>=6.0.2
+safetensors>=0.4.5
