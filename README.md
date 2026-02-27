@@ -40,6 +40,8 @@ cp .env.example .env
 - `scripts/quantize_gptq.py` : GPTQ 양자화
 - `scripts/export_gguf.sh` : GGUF 변환(지원 아키텍처)
 - `scripts/upload_hf.py` : HF 업로드
+
+권장 산출물 네이밍: `<model>-<release>-awq-w4a16` (예: `kanana-2-30b-a3b-instruct-2601-awq-w4a16`)
 - `MODEL_TRACKER.md` : 모델별 진행 현황
 
 ---
