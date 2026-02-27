@@ -15,7 +15,7 @@ def run_with_autoawq(model_path: str, tokenizer, prompt: str, max_new_tokens: in
         fuse_layers=False,
         safetensors=True,
         trust_remote_code=True,
-        device_map="cpu",
+        device_map={"": "cpu"},
     )
 
     inputs = tokenizer(prompt, return_tensors="pt")
