@@ -1,25 +1,17 @@
 #!/usr/bin/env python3
-"""
-LLM Compressor quantization entry (replaces AutoAWQ path).
-
-Usage example:
-python scripts/quantize_awq.py \
-  --model-id NCSOFT/Llama-VARCO-8B-Instruct \
-  --output-dir results/varco8b-llmc-awq4 \
-  --max-seq-length 2048
-"""
-
 import argparse
 from pathlib import Path
 
-from transformers import AutoModelForCausalLM, AutoTokenizer
-
 
 def main():
-    p = argparse.ArgumentParser(description="Quantize model with llm-compressor (AWQ-like flow)")
+    p = argparse.ArgumentParser(description="Quantize model with llm-compressor (W4A16)")
     p.add_argument("--model-id", required=True)
     p.add_argument("--output-dir", required=True)
-    p.add_argument("--max-seq-length", type=int, default=2048)
+    p.add_argument("--max-seq-length", type=int, default=512)
+    p.add_argument("--num-calibration-samples", type=int, default=64)
+    p.add_argument("--dataset", default="wikitext")
+    p.add_argument("--dataset-config-name", default="wikitext-2-raw-v1")
+    p.add_argument("--splits", default="train")
     p.add_argument("--trust-remote-code", action="store_true")
     args = p.parse_args()
 
@@ -28,7 +20,6 @@ def main():
 
     try:
         from llmcompressor import oneshot
-        from llmcompressor.modifiers.quantization import GPTQModifier
     except Exception as e:
         raise SystemExit(
             "llmcompressor import failed. Install deps first:\n"
@@ -36,34 +27,28 @@ def main():
             f"detail: {e}"
         )
 
-    print("[1/4] loading tokenizer/model...")
-    tokenizer = AutoTokenizer.from_pretrained(args.model_id, trust_remote_code=args.trust_remote_code)
-    model = AutoModelForCausalLM.from_pretrained(
-        args.model_id,
-        trust_remote_code=args.trust_remote_code,
-        torch_dtype="auto",
-        device_map="auto",
-    )
+    recipe = """
+quant_stage:
+  quant_modifiers:
+    GPTQModifier:
+      targets: ["Linear"]
+      scheme: "W4A16"
+      ignore: ["lm_head"]
+"""
 
-    print("[2/4] building quantization recipe...")
-    recipe = [
-        GPTQModifier(
-            targets="Linear",
-            scheme="W4A16",
-            ignore=["lm_head"],
-        )
-    ]
-
-    print("[3/4] running llm-compressor oneshot...")
+    print("running llm-compressor oneshot...")
     oneshot(
-        model=model,
+        model=args.model_id,
         recipe=recipe,
-        output_dir=str(out),
+        trust_remote_code_model=args.trust_remote_code,
+        dataset=args.dataset,
+        dataset_config_name=args.dataset_config_name,
+        splits=args.splits,
+        num_calibration_samples=args.num_calibration_samples,
         max_seq_length=args.max_seq_length,
+        output_dir=str(out),
     )
 
-    print("[4/4] saving tokenizer...")
-    tokenizer.save_pretrained(str(out))
     print(f"done: {out}")
 
 
