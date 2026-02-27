@@ -5,9 +5,12 @@
 - GGUF / GPTQ / AWQ 존재 여부 체크
 
 ## 2) 양자화
-- AWQ:
+- llm-compressor 양자화:
   ```bash
-  python scripts/quantize_awq.py --model-id <repo> --w-bit 4 --output-dir results/<name>-awq4
+  python scripts/quantize_awq.py \
+    --model-id <repo> \
+    --output-dir results/<name>-llmc-w4a16 \
+    --trust-remote-code
   ```
 - GPTQ:
   ```bash

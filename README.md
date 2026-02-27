@@ -36,7 +36,7 @@ cp .env.example .env
 ## 구조
 
 - `configs/models.yaml` : 타깃 모델 목록/상태
-- `scripts/quantize_awq.py` : AWQ 양자화
+- `scripts/quantize_awq.py` : llm-compressor 기반 4bit 양자화
 - `scripts/quantize_gptq.py` : GPTQ 양자화
 - `scripts/export_gguf.sh` : GGUF 변환(지원 아키텍처)
 - `scripts/upload_hf.py` : HF 업로드
