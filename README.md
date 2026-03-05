@@ -36,10 +36,13 @@ cp .env.example .env
 ## 구조
 
 - `configs/models.yaml` : 타깃 모델 목록/상태
-- `scripts/quantize_awq.py` : llm-compressor 기반 4bit 양자화
-- `scripts/quantize_gptq.py` : GPTQ 양자화
-- `scripts/export_gguf.sh` : GGUF 변환(지원 아키텍처)
+- `scripts/quantization/awq.py` : AWQ 양자화
+- `scripts/quantization/gptq.py` : GPTQ 양자화
+- `scripts/quantization/gguf.py` : GGUF 변환
+- `scripts/benchmark/smoke_infer.py` : 벤치마크/스모크 추론
 - `scripts/upload_hf.py` : HF 업로드
+
+(호환용 래퍼: `scripts/quantize_awq.py`, `scripts/quantize_gptq.py`, `scripts/export_gguf.sh`, `scripts/smoke_infer_cpu_offload.py`)
 
 권장 산출물 네이밍: `<model>-<release>-awq-w4a16` (예: `kanana-2-30b-a3b-instruct-2601-awq-w4a16`)
 - `MODEL_TRACKER.md` : 모델별 진행 현황

@@ -7,14 +7,14 @@
 ## 2) 양자화
 - llm-compressor 양자화:
   ```bash
-  python scripts/quantize_awq.py \
+  python scripts/quantization/awq.py \
     --model-id <repo> \
     --output-dir results/<name>-w4a16 \
     --trust-remote-code
   ```
 - GPTQ (llm-compressor, AutoGPTQ 제거):
   ```bash
-  python scripts/quantize_gptq.py \
+  python scripts/quantization/gptq.py \
     --model-id <repo> \
     --max-calib-samples 64 \
     --max-calib-seq-len 512 \
@@ -24,7 +24,7 @@
 
 ## 3) GGUF 변환 (가능 시)
 ```bash
-bash scripts/export_gguf.sh <local_model_path> results/<name>.gguf Q4_K_M
+python scripts/quantization/gguf.py --model-src <local_model_path> --output-file results/<name>.gguf --qtype Q4_K_M
 ```
 
 ## 4) 네이밍 정규화
