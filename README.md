@@ -20,8 +20,8 @@ cd llm-quant-lab
 python -m venv .venv
 source .venv/bin/activate
 uv pip install -r requirements.txt
-# (optional) GPTQ
-# uv pip install -r requirements-gptq.txt
+# GPTQ는 llm-compressor 경로를 사용합니다 (AutoGPTQ 제거)
+# 추가 설치 불필요
 ```
 
 환경변수 설정:

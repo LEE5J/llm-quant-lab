@@ -12,15 +12,12 @@
     --output-dir results/<name>-w4a16 \
     --trust-remote-code
   ```
-- GPTQ:
+- GPTQ (llm-compressor, AutoGPTQ 제거):
   ```bash
   python scripts/quantize_gptq.py \
     --model-id <repo> \
-    --bits 4 \
-    --group-size 128 \
     --max-calib-samples 64 \
     --max-calib-seq-len 512 \
-    --calib-file <optional_txt_or_jsonl> \
     --trust-remote-code \
     --output-dir results/<name>-gptq4
   ```

@@ -1,3 +1,4 @@
-# Optional GPTQ dependencies (legacy)
-# Prefer llmcompressor pipeline in this repo.
-auto-gptq>=0.7.1
+# Optional GPTQ dependencies
+# AutoGPTQ has been removed from this repository (deprecated/outdated).
+# GPTQ quantization is handled by llm-compressor via scripts/quantize_gptq.py.
+# No extra package is required beyond requirements.txt.
