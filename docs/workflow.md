@@ -12,7 +12,7 @@
     --output-dir results/<name>-w4a16 \
     --trust-remote-code
   ```
-- GPTQ (llm-compressor, AutoGPTQ 제거):
+- GPTQ (ModelCloud/GPTQModel):
   ```bash
   python scripts/quantization/gptq.py \
     --model-id <repo> \
