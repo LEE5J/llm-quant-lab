@@ -1,3 +1,2 @@
-# Optional GPTQ dependencies (ModelCloud/GPTQModel backend)
-# Install when running scripts/quantization/gptq.py
-git+https://github.com/ModelCloud/GPTQModel.git
+# GPTQ path now uses llmcompressor from requirements.txt.
+# No extra backend-specific dependencies are required.

@@ -2,20 +2,17 @@
 import argparse
 from pathlib import Path
 
-import torch
-from transformers import AutoModelForCausalLM, AutoTokenizer, GPTQConfig
-
 
 def main():
-    p = argparse.ArgumentParser(description="GPTQ quantization via GPTQModel (ModelCloud)")
+    p = argparse.ArgumentParser(description="GPTQ quantization via llmcompressor (W4A16)")
     p.add_argument("--model-id", required=True)
     p.add_argument("--output-dir", required=True)
-    p.add_argument("--bits", type=int, default=4, choices=[2, 3, 4, 8])
-    p.add_argument("--group-size", type=int, default=128)
-    p.add_argument("--max-calib-samples", type=int, default=64)
-    p.add_argument("--max-calib-seq-len", type=int, default=512)
-    p.add_argument("--desc-act", action="store_true")
-    p.add_argument("--damp-percent", type=float, default=0.1)
+    p.add_argument("--max-seq-length", type=int, default=512)
+    p.add_argument("--num-calibration-samples", type=int, default=64)
+    p.add_argument("--dataset", default="wikitext")
+    p.add_argument("--dataset-config-name", default="wikitext-2-raw-v1")
+    p.add_argument("--splits", default="train")
+    p.add_argument("--ignore", nargs="*", default=["lm_head"])
     p.add_argument("--trust-remote-code", action="store_true")
     args = p.parse_args()
 
@@ -23,48 +20,38 @@ def main():
     out.mkdir(parents=True, exist_ok=True)
 
     try:
-        import gptqmodel  # noqa: F401
+        from llmcompressor import oneshot
     except Exception as e:
         raise SystemExit(
-            "gptqmodel import failed. Install GPTQModel first:\n"
-            "  uv pip install git+https://github.com/ModelCloud/GPTQModel.git\n"
+            "llmcompressor import failed. Install compatible deps first:\n"
+            "  python -m pip install -r requirements.txt\n"
             f"detail: {e}"
         )
 
-    print("[1/4] loading tokenizer...")
-    tokenizer = AutoTokenizer.from_pretrained(
-        args.model_id,
-        use_fast=True,
-        trust_remote_code=args.trust_remote_code,
+    ignore_yaml = '[' + ', '.join(f'\"{name}\"' for name in args.ignore) + ']'
+    recipe = f"""
+quant_stage:
+  quant_modifiers:
+    GPTQModifier:
+      targets: [\"Linear\"]
+      scheme: \"W4A16\"
+      ignore: {ignore_yaml}
+"""
+
+    print("running llmcompressor oneshot (GPTQ path)...")
+    oneshot(
+        model=args.model_id,
+        recipe=recipe,
+        trust_remote_code_model=args.trust_remote_code,
+        dataset=args.dataset,
+        dataset_config_name=args.dataset_config_name,
+        splits=args.splits,
+        num_calibration_samples=args.num_calibration_samples,
+        max_seq_length=args.max_seq_length,
+        output_dir=str(out),
     )
 
-    print("[2/4] building GPTQ config (GPTQModel backend)...")
-    quant_cfg = GPTQConfig(
-        bits=args.bits,
-        group_size=args.group_size,
-        damp_percent=args.damp_percent,
-        desc_act=args.desc_act,
-        tokenizer=tokenizer,
-        dataset="c4",
-    )
-
-    print("[3/4] quantizing model...")
-    model = AutoModelForCausalLM.from_pretrained(
-        args.model_id,
-        torch_dtype=torch.float16 if torch.cuda.is_available() else torch.float32,
-        device_map="auto" if torch.cuda.is_available() else {"": "cpu"},
-        quantization_config=quant_cfg,
-        trust_remote_code=args.trust_remote_code,
-    )
-
-    print("[4/4] saving model/tokenizer...")
-    model.save_pretrained(str(out), safe_serialization=True)
-    tokenizer.save_pretrained(str(out))
-
-    print("done")
-    print(f"model_id={args.model_id}")
-    print(f"bits={args.bits}, group_size={args.group_size}")
-    print(f"output_dir={out.resolve()}")
+    print(f"done: {out}")
 
 
 if __name__ == "__main__":

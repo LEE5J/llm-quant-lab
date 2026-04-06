@@ -12,14 +12,14 @@
     --output-dir results/<name>-w4a16 \
     --trust-remote-code
   ```
-- GPTQ (ModelCloud/GPTQModel):
+- GPTQ (llmcompressor):
   ```bash
   python scripts/quantization/gptq.py \
     --model-id <repo> \
-    --max-calib-samples 64 \
-    --max-calib-seq-len 512 \
+    --num-calibration-samples 64 \
+    --max-seq-length 512 \
     --trust-remote-code \
-    --output-dir results/<name>-gptq4
+    --output-dir results/<name>-gptq-w4a16
   ```
 
 ## 3) GGUF 변환 (가능 시)

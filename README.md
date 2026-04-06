@@ -20,8 +20,6 @@ cd llm-quant-lab
 python -m venv .venv
 source .venv/bin/activate
 uv pip install -r requirements.txt
-# (optional) GPTQModel backend
-uv pip install -r requirements-gptq.txt
 ```
 
 환경변수 설정:
@@ -37,12 +35,12 @@ cp .env.example .env
 
 - `configs/models.yaml` : 타깃 모델 목록/상태
 - `scripts/quantization/awq.py` : AWQ 양자화
-- `scripts/quantization/gptq.py` : GPTQ 양자화
+- `scripts/quantization/gptq.py` : GPTQ 양자화 (llmcompressor 기반)
 - `scripts/quantization/gguf.py` : GGUF 변환
 - `scripts/benchmark/smoke_infer.py` : 벤치마크/스모크 추론
 - `scripts/upload_hf.py` : HF 업로드
 
-(호환용 래퍼: `scripts/quantize_awq.py`, `scripts/quantize_gptq.py`, `scripts/export_gguf.sh`, `scripts/smoke_infer_cpu_offload.py`)
+(호환용 래퍼: `scripts/quantize_awq.py`, `scripts/quantize_gptq.py`, `scripts/quantize_gptq_llmc.py`, `scripts/export_gguf.sh`, `scripts/smoke_infer_cpu_offload.py`)
 
 권장 산출물 네이밍: `<model>-<release>-awq-w4a16` (예: `kanana-2-30b-a3b-instruct-2601-awq-w4a16`)
 - `MODEL_TRACKER.md` : 모델별 진행 현황
@@ -54,3 +52,10 @@ cp .env.example .env
 - 원본 모델 라이선스를 반드시 준수하세요.
 - 모델 카드에 원본 레포 링크/라이선스/변경사항을 명시하세요.
 - 일부 최신 아키텍처는 GGUF 변환이 아직 불가능할 수 있습니다.
+
+
+## 환경 호환성
+
+- GPTQ/AWQ 경로는 `llmcompressor` 기준으로 관리합니다.
+- 현재 검증 대상 버전 범위는 `transformers<=4.57.6`, `accelerate<=1.12.0`, `torch<=2.10.0` 입니다.
+- `requirements-gptq.txt`는 별도 백엔드 의존성 파일이 아니라, GPTQ도 `requirements.txt` 하나로 처리한다는 안내만 남겨둡니다.
