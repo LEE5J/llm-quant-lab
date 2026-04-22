@@ -12,6 +12,8 @@
     --output-dir results/<name>-w4a16 \
     --trust-remote-code
   ```
+- 기본 캘리브레이션 프로필은 `korean-mix-v1` 입니다.
+- 상세한 데이터셋 구성은 `docs/calibration.md` 참고
 - GPTQ (llmcompressor):
   ```bash
   python scripts/quantization/gptq.py \
@@ -21,6 +23,8 @@
     --trust-remote-code \
     --output-dir results/<name>-gptq-w4a16
   ```
+- 기본 캘리브레이션 프로필은 `korean-mix-v1` 입니다.
+- 상세한 데이터셋 구성은 `docs/calibration.md` 참고
 
 ## 3) GGUF 변환 (가능 시)
 ```bash

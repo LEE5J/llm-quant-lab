@@ -39,6 +39,7 @@ cp .env.example .env
 - `scripts/quantization/gguf.py` : GGUF 변환
 - `scripts/benchmark/smoke_infer.py` : 벤치마크/스모크 추론
 - `scripts/upload_hf.py` : HF 업로드
+- `docs/calibration.md` : 기본 캘리브레이션 프로필과 데이터셋 정책
 
 (호환용 래퍼: `scripts/quantize_awq.py`, `scripts/quantize_gptq.py`, `scripts/quantize_gptq_llmc.py`, `scripts/export_gguf.sh`, `scripts/smoke_infer_cpu_offload.py`)
 
@@ -59,3 +60,9 @@ cp .env.example .env
 - GPTQ/AWQ 경로는 `llmcompressor` 기준으로 관리합니다.
 - 현재 검증 대상 버전 범위는 `transformers<=4.57.6`, `accelerate<=1.12.0`, `torch<=2.10.0` 입니다.
 - `requirements-gptq.txt`는 별도 백엔드 의존성 파일이 아니라, GPTQ도 `requirements.txt` 하나로 처리한다는 안내만 남겨둡니다.
+
+## 기본 캘리브레이션 정책
+
+- 기본값은 korean-mix-v1 입니다.
+- 한국어 위키 / KoAlpaca-RealQA / 한국어 교과형 장문 텍스트를 균등 혼합합니다.
+- 상세 내용은 docs/calibration.md 를 참고하세요.
