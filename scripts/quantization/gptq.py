@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 import argparse
+import sys
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 
 from scripts.quantization.calibration_profiles import (
     KOREAN_MIX_V1,

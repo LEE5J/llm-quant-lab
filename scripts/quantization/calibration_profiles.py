@@ -65,7 +65,7 @@ def _build_wiki(row: dict) -> list[str]:
 def _build_qa(row: dict) -> list[str]:
     question = row.get('question') or row.get('instruction') or row.get('prompt') or ''
     answer = row.get('answer') or row.get('response') or row.get('output') or ''
-    text = _normalize_text(f'질문: {question}\n\n답변: {answer}')
+    text = f'질문: {_normalize_text(question)}\n\n답변: {_normalize_text(answer)}'.strip()
     return [text] if len(text) >= 40 and _has_hangul(text) else []
 
 
@@ -117,8 +117,8 @@ def profile_description(name: str) -> str:
     )
 
 
-def build_calibration_dataset(profile_name: str, num_samples: int, seed: int = 42):
-    from datasets import Dataset, load_dataset
+def _collect_profile_texts(profile_name: str, num_samples: int, seed: int = 42):
+    from datasets import load_dataset
 
     if profile_name not in PROFILE_SPECS:
         raise ValueError(f'Unknown calibration profile: {profile_name}. available={profile_names()}')
@@ -163,9 +163,66 @@ def build_calibration_dataset(profile_name: str, num_samples: int, seed: int = 4
             )
         all_texts.extend(gathered)
 
+    return all_texts, debug_rows
+
+
+def build_calibration_dataset(profile_name: str, num_samples: int, seed: int = 42):
+    from datasets import Dataset
+
+    all_texts, debug_rows = _collect_profile_texts(profile_name, num_samples=num_samples, seed=seed)
     dataset = Dataset.from_dict({'text': all_texts})
     dataset = dataset.shuffle(seed=seed)
     dataset.info.description = f'calibration profile: {profile_name}'
     for label, size, preview in debug_rows[:12]:
         print(f'[calibration] {label} ({size} chars): {preview}')
+    return dataset
+
+
+def _to_chat_messages(text: str) -> list[dict]:
+    if text.startswith('질문:') and '\n\n답변:' in text:
+        question, answer = text.split('\n\n답변:', 1)
+        question = question.removeprefix('질문:').strip()
+        answer = answer.strip()
+        return [
+            {'role': 'user', 'content': question},
+            {'role': 'assistant', 'content': answer},
+        ]
+
+    return [
+        {'role': 'system', 'content': '당신은 한국어 텍스트를 정확히 이해하고 응답하는 AI 어시스턴트입니다.'},
+        {'role': 'user', 'content': text},
+    ]
+
+
+def build_chat_templated_calibration_dataset(tokenizer, profile_name: str, num_samples: int, seed: int = 42, max_length: int = 512):
+    from datasets import Dataset
+
+    raw_texts, debug_rows = _collect_profile_texts(profile_name, num_samples=num_samples, seed=seed)
+    rendered_texts: list[str] = []
+
+    for text in raw_texts:
+        messages = _to_chat_messages(text)
+        tokenized = tokenizer.apply_chat_template(
+            messages,
+            tokenize=True,
+            add_generation_prompt=False,
+        )
+        if hasattr(tokenized, 'get'):
+            token_ids = tokenized.get('input_ids', tokenized)
+        elif hasattr(tokenized, 'ids'):
+            token_ids = tokenized.ids
+        else:
+            token_ids = tokenized
+        token_ids = token_ids[:max_length]
+        rendered_texts.append(tokenizer.decode(token_ids, skip_special_tokens=False))
+
+    dataset = Dataset.from_dict({'text': rendered_texts})
+    dataset = dataset.shuffle(seed=seed)
+    dataset.info.description = f'chat-templated calibration profile: {profile_name}'
+    print(f'[calibration] chat template applied: {getattr(tokenizer, "chat_template", None) is not None}')
+    print(f'[calibration] max_length={max_length}, num_samples={num_samples}')
+    for label, size, preview in debug_rows[:12]:
+        print(f'[calibration-raw] {label} ({size} chars): {preview}')
+    for sample in rendered_texts[:6]:
+        print(f'[calibration-rendered] {sample[:180]}')
     return dataset
