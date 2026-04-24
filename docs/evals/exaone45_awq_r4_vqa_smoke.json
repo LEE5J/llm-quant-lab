@@ -1,0 +1,76 @@
+{
+  "generated_at": "2026-04-24T01:01:57.168726+00:00",
+  "model": "EXAONE-4.5-33B-AWQ-R4",
+  "base_url": "http://127.0.0.1:8000/v1",
+  "tasks": [
+    "K-Viscuit",
+    "KRETA"
+  ],
+  "limit_per_task": 1,
+  "summary": {
+    "K-Viscuit": {
+      "n": 1,
+      "scored": 1,
+      "correct": 0,
+      "accuracy": 0.0,
+      "errors": 0
+    },
+    "KRETA": {
+      "n": 1,
+      "scored": 1,
+      "correct": 0,
+      "accuracy": 0.0,
+      "errors": 0
+    }
+  },
+  "results": [
+    {
+      "task": "K-Viscuit",
+      "id": "Food.1.0",
+      "question": "What is the name of the food being prepared in the molds in the image?",
+      "options": [
+        "Bungeo-ppang",
+        "Hwangnam-ppang",
+        "Dakjuk",
+        "Ice cream"
+      ],
+      "answer": "0",
+      "output": "The image shows small, round molds with white batter, topped with red meat (likely beef) and yellowish egg. This is characteristic of  (beef",
+      "score": {
+        "scored": true,
+        "correct": false,
+        "prediction": null,
+        "target": "A"
+      },
+      "latency_sec": 0.563,
+      "error": null,
+      "meta": {
+        "category": "Food"
+      }
+    },
+    {
+      "task": "KRETA",
+      "id": "Education_and_Academia_1",
+      "question": "배경사진 속 사람들이 들고 있는 슬로건의 문구는 무엇인가요?",
+      "options": [
+        "기적에서 현실로",
+        "전설 속의 기적",
+        "전설에서 신화로",
+        "기적에서 전설로"
+      ],
+      "answer": "D",
+      "output": "The image shows a poster with text. The large text in the center says \"1위 에둘\" (1st place, miracle). Above that, smaller text says \"",
+      "score": {
+        "scored": true,
+        "correct": false,
+        "prediction": "A",
+        "target": "D"
+      },
+      "latency_sec": 0.609,
+      "error": null,
+      "meta": {
+        "category": "Education and Academia"
+      }
+    }
+  ]
+}

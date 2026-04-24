@@ -1,0 +1,1058 @@
+{
+  "generated_at": "2026-04-24T01:05:31.671969+00:00",
+  "model": "EXAONE-4.5-33B-AWQ-R4",
+  "base_url": "http://127.0.0.1:8000/v1",
+  "tasks": [
+    "MMMU",
+    "MMMU-Pro",
+    "MathVista-mini",
+    "MathVision",
+    "WeMath",
+    "LogicVista",
+    "Charxiv-RQ",
+    "K-Viscuit",
+    "KRETA"
+  ],
+  "limit_per_task": 5,
+  "summary": {
+    "MMMU": {
+      "n": 5,
+      "scored": 5,
+      "correct": 0,
+      "accuracy": 0.0,
+      "errors": 0
+    },
+    "MMMU-Pro": {
+      "n": 5,
+      "scored": 5,
+      "correct": 1,
+      "accuracy": 0.2,
+      "errors": 0
+    },
+    "MathVista-mini": {
+      "n": 5,
+      "scored": 5,
+      "correct": 0,
+      "accuracy": 0.0,
+      "errors": 0
+    },
+    "MathVision": {
+      "n": 5,
+      "scored": 5,
+      "correct": 1,
+      "accuracy": 0.2,
+      "errors": 0
+    },
+    "WeMath": {
+      "n": 5,
+      "scored": 5,
+      "correct": 0,
+      "accuracy": 0.0,
+      "errors": 0
+    },
+    "LogicVista": {
+      "n": 5,
+      "scored": 5,
+      "correct": 1,
+      "accuracy": 0.2,
+      "errors": 0
+    },
+    "Charxiv-RQ": {
+      "n": 5,
+      "scored": 5,
+      "correct": 0,
+      "accuracy": 0.0,
+      "errors": 0
+    },
+    "K-Viscuit": {
+      "n": 5,
+      "scored": 5,
+      "correct": 1,
+      "accuracy": 0.2,
+      "errors": 0
+    },
+    "KRETA": {
+      "n": 5,
+      "scored": 5,
+      "correct": 0,
+      "accuracy": 0.0,
+      "errors": 0
+    }
+  },
+  "results": [
+    {
+      "task": "MMMU",
+      "id": "validation_Accounting_1",
+      "question": "<image 1> Baxter Company has a relevant range of production between 15,000 and 30,000 units. The following cost data represents average variable costs per unit for 25,000 units of production. If 30,000 units are produced, what are the per unit manufacturing overhead costs incurred?",
+      "options": [
+        "$6",
+        "$7",
+        "$8",
+        "$9"
+      ],
+      "answer": "B",
+      "output": "The user wants me to find the per unit manufacturing overhead costs for 30,000 units.\n\n1.  **Analyze the provided image:**\n    *   The image shows a table with \"Direct materials\" and \"Average Cost per Unit\".\n    *   The rows list costs: Direct labor (9), Direct materials (",
+      "score": {
+        "scored": true,
+        "correct": false,
+        "prediction": null,
+        "target": "B"
+      },
+      "latency_sec": 0.868,
+      "error": null,
+      "meta": {
+        "config": "Accounting"
+      }
+    },
+    {
+      "task": "MMMU",
+      "id": "validation_Accounting_2",
+      "question": "Assume accounts have normal balances, solve for the one missing account balance: Dividends. Equipment was recently purchased, so there is neither depreciation expense nor accumulated depreciation. <image 1>",
+      "options": [
+        "$194,815",
+        "$182,815",
+        "$12,000",
+        "$9,000"
+      ],
+      "answer": "C",
+      "output": "The user wants me to find the missing account balance: Dividends.\n\nThe image shows a list of accounts with balances. Some are missing (Dividends, Notes). The text says \"Assume accounts have normal balances, solve for the one missing account balance: Dividends. Equipment was recently purchased, so there is neither depreciation expense nor",
+      "score": {
+        "scored": true,
+        "correct": false,
+        "prediction": null,
+        "target": "C"
+      },
+      "latency_sec": 0.854,
+      "error": null,
+      "meta": {
+        "config": "Accounting"
+      }
+    },
+    {
+      "task": "MMMU",
+      "id": "validation_Accounting_3",
+      "question": "Maxwell Software, Inc., has the following mutually exclusive projects.Suppose the company uses the NPV rule to rank these two projects.<image 1> Which project should be chosen if the appropriate discount rate is 15 percent?",
+      "options": [
+        "Project A",
+        "Project B"
+      ],
+      "answer": "B",
+      "output": "The user wants me to choose between Project A and Project B based on the NPV rule with a 15% discount rate.\n\nThe table shows cash flows:\n\nYear 0: Project A = -20,000; Project B = -24,000\nYear 1: 13,",
+      "score": {
+        "scored": true,
+        "correct": false,
+        "prediction": "A",
+        "target": "B"
+      },
+      "latency_sec": 0.853,
+      "error": null,
+      "meta": {
+        "config": "Accounting"
+      }
+    },
+    {
+      "task": "MMMU",
+      "id": "validation_Accounting_4",
+      "question": "Each situation below relates to an independent company's Owners' Equity. <image 1> Calculate the missing values of company 2.",
+      "options": [
+        "$1,620",
+        "$12,000",
+        "$51,180",
+        "$0"
+      ],
+      "answer": "D",
+      "output": "The user wants me to find the missing values for \"company 2\". Looking at the image, there are three rows labeled C.1, C.2, C.3. The text says \"Each situation below relates to...\". The prompt says \"Calculate the missing values of company 2.\" That likely corresponds to row C.2.\n\nLet's",
+      "score": {
+        "scored": true,
+        "correct": false,
+        "prediction": null,
+        "target": "D"
+      },
+      "latency_sec": 0.844,
+      "error": null,
+      "meta": {
+        "config": "Accounting"
+      }
+    },
+    {
+      "task": "MMMU",
+      "id": "validation_Accounting_5",
+      "question": "The following data show the units in beginning work in process inventory, the number of units started, the number of units transferred, and the percent completion of the ending work in process for conversion. Given that materials are added at the beginning of the process, what are the equivalent units for conversion costs for each quarter using the weighted-average method? Assume that the quarters are independent.<image 1>",
+      "options": [
+        "132,625",
+        "134,485",
+        "135,332",
+        "132,685"
+      ],
+      "answer": "B",
+      "output": "The user wants the equivalent units for conversion costs for each quarter using the weighted-average method.\n\nThe data table is:\n\nQuarter | Beginning Work in Process | Started | Transferred Out | Conversion (%)\n1 | 2,250 | 255,000 | 235,",
+      "score": {
+        "scored": true,
+        "correct": false,
+        "prediction": null,
+        "target": "B"
+      },
+      "latency_sec": 0.846,
+      "error": null,
+      "meta": {
+        "config": "Accounting"
+      }
+    },
+    {
+      "task": "MMMU-Pro",
+      "id": "test_History_1",
+      "question": "Which of the following best explains the overall trend shown in the <image 1>?",
+      "options": [
+        "Migrations to areas of Central Asia for resettlement",
+        "The spread of pathogens across the Silk Road",
+        "Invasions by Mongol tribes",
+        "Large-scale famine due to crop failures"
+      ],
+      "answer": "B",
+      "output": "The user wants me to identify the overall trend in the chart.\n\n1.  **Analyze the chart:**\n    *   The x-axis is \"Year\" (0, 200, 400, 600, C.E.).\n    *   The y-axis is \"Population (millions)\" (",
+      "score": {
+        "scored": true,
+        "correct": false,
+        "prediction": null,
+        "target": "B"
+      },
+      "latency_sec": 0.844,
+      "error": null,
+      "meta": {
+        "config": "standard (4 options)"
+      }
+    },
+    {
+      "task": "MMMU-Pro",
+      "id": "test_Art_113",
+      "question": "<image 1> of Louis Black, believed to be a formerly enslaved man, was painted by which artist?",
+      "options": [
+        "Mary Cameron",
+        "Gavin Hamilton",
+        "James Irvine",
+        "Arthur Melville"
+      ],
+      "answer": "C",
+      "output": "The user wants to identify the artist of the painting of Louis Black. The image shows a portrait of a man with a beard, wearing a vest and a checkered cravon. The style looks like 19th-century portraiture. The name \"Louis Black\" is spelled in the prompt. The options are Mary Cameron, Gavin Hamilton, James Ir",
+      "score": {
+        "scored": true,
+        "correct": false,
+        "prediction": null,
+        "target": "C"
+      },
+      "latency_sec": 0.863,
+      "error": null,
+      "meta": {
+        "config": "standard (4 options)"
+      }
+    },
+    {
+      "task": "MMMU-Pro",
+      "id": "validation_Design_19",
+      "question": "<image 1> is a symbol of...",
+      "options": [
+        "Time waits for no man",
+        "A common experience",
+        "A mystery",
+        "A clock"
+      ],
+      "answer": "A",
+      "output": "The user wants me to identify the symbol in the image.\n\n1.  Looking at the image, I see a figure holding a scythe and a clock. The text \"FATHER TIME\" is displayed.\n2.  The question asks \"is a symbol of...\".\n3.  The options are:\n    *   A. Time waits for",
+      "score": {
+        "scored": true,
+        "correct": false,
+        "prediction": null,
+        "target": "A"
+      },
+      "latency_sec": 0.864,
+      "error": null,
+      "meta": {
+        "config": "standard (4 options)"
+      }
+    },
+    {
+      "task": "MMMU-Pro",
+      "id": "test_History_134",
+      "question": "The conflict addressed in the <image 1> is best understood in the context of which of the following?",
+      "options": [
+        "The imperial interests of the United States",
+        "A dramatic increase in migration",
+        "A stagnation in global trade",
+        "The burgeoning human rights movement"
+      ],
+      "answer": "B",
+      "output": "The image is a political cartoon titled \"The Only Use Bairer Out.\" It depicts a worker sitting on a box labeled \"Orde\" (Order), with a large sack labeled \"Ambust\" (Ambust) beside him. The text on the box reads: \"Notice Commins Nhillist Sccaist F",
+      "score": {
+        "scored": true,
+        "correct": false,
+        "prediction": "A",
+        "target": "B"
+      },
+      "latency_sec": 0.874,
+      "error": null,
+      "meta": {
+        "config": "standard (4 options)"
+      }
+    },
+    {
+      "task": "MMMU-Pro",
+      "id": "test_Literature_65",
+      "question": "Refer to the figure <image 1>, which term refers to the materials and technical means used by artists to create pictures?",
+      "options": [
+        "Artistic media",
+        "Artistic elements",
+        "Functions of illustrations",
+        "Visual elements"
+      ],
+      "answer": "A",
+      "output": "The image shows art supplies: paint, brushes, a palette, a sketchbook, and pencils. The question asks for the term that refers to the materials and technical means used by artists to create pictures. The options include \"Artistic media\" (which means art supplies), \"Artistic elements\" (which could mean components), \"Functions of illustrations\"",
+      "score": {
+        "scored": true,
+        "correct": true,
+        "prediction": "A",
+        "target": "A"
+      },
+      "latency_sec": 0.86,
+      "error": null,
+      "meta": {
+        "config": "standard (4 options)"
+      }
+    },
+    {
+      "task": "MathVista-mini",
+      "id": "1",
+      "question": "Hint: Please answer the question requiring a floating-point number with one decimal place and provide the final value, e.g., 1.2, 1.3, 1.4, at the end.\nQuestion: When a spring does work on an object, we cannot find the work by simply multiplying the spring force by the object's displacement. The reason is that there is no one value for the force-it changes. However, we can split the displacement up into an infinite number of tiny parts and then approximate the force in each as being constant. Integration sums the work done in all those parts. Here we use the generic result of the integration.\r\n\r\nIn Figure, a cumin canister of mass $m=0.40 \\mathrm{~kg}$ slides across a horizontal frictionless counter with speed $v=0.50 \\mathrm{~m} / \\mathrm{s}$. It then runs into and compresses a spring of spring constant $k=750 \\mathrm{~N} / \\mathrm{m}$. When the canister is momentarily stopped by the spring, by what distance $d$ is the spring compressed?",
+      "options": [],
+      "answer": "1.2",
+      "output": "The user wants a floating-point number with one decimal place.  \nThe question asks: \"by what distance d is the spring compressed?\"  \nThe text says: \"The spring force does negative work, decreasing speed and kinetic energy.\"  \nThe diagram shows a block of mass m = 0.40 kg, speed v = ",
+      "score": {
+        "scored": true,
+        "correct": false,
+        "prediction": "The user wants a floating-point number with one decimal place.  \nThe question asks: \"by what distance d is the spring co",
+        "target": "1.2"
+      },
+      "latency_sec": 0.878,
+      "error": null,
+      "meta": {}
+    },
+    {
+      "task": "MathVista-mini",
+      "id": "2",
+      "question": "Hint: Please answer the question requiring an integer answer and provide the final value, e.g., 1, 2, 3, at the end.\nQuestion: what is the total volume of the measuring cup? (Unit: g)",
+      "options": [],
+      "answer": "1000",
+      "output": "The user is asking for the total volume of the measuring cup in grams (g). The image shows a measuring cup with flour inside. The markings on the cup show \"100\", \"200\", \"300\", \"400\", \"500\", \"600\", \"700\", \"8",
+      "score": {
+        "scored": true,
+        "correct": false,
+        "prediction": "The user is asking for the total volume of the measuring cup in grams (g). The image shows a measuring cup with flour in",
+        "target": "1000"
+      },
+      "latency_sec": 0.865,
+      "error": null,
+      "meta": {}
+    },
+    {
+      "task": "MathVista-mini",
+      "id": "3",
+      "question": "Hint: Please answer the question and provide the correct option letter, e.g., A, B, C, D, at the end.\nQuestion: △ABC的两内角平分线OB、OC相交于点O，若∠A＝110°，则∠BOC＝（）\nChoices:\n(A) 135°\n(B) 140°\n(C) 145°\n(D) 150°",
+      "options": [
+        "135°",
+        "140°",
+        "145°",
+        "150°"
+      ],
+      "answer": "145°",
+      "output": "The user wants me to find the angle BOC in triangle ABC, given that angle A is 110 degrees, OB and OC are angle bisectors.\n\nThe angle bisectors of angle B and angle C intersect at point O. The angle BOC is supplementary to angle A? Wait, no. The angle BOC is supplementary to angle A? Actually",
+      "score": {
+        "scored": true,
+        "correct": false,
+        "prediction": "The user wants me to find the angle BOC in triangle ABC, given that angle A is 110 degrees, OB and OC are angle bisector",
+        "target": "145°"
+      },
+      "latency_sec": 0.843,
+      "error": null,
+      "meta": {}
+    },
+    {
+      "task": "MathVista-mini",
+      "id": "4",
+      "question": "Hint: Please answer the question requiring an integer answer and provide the final value, e.g., 1, 2, 3, at the end.\nQuestion: Subtract all large rubber spheres. Subtract all big shiny cylinders. How many objects are left?",
+      "options": [],
+      "answer": "4",
+      "output": "The user wants me to count the remaining objects after subtracting specific categories.\n\n1.  **Identify \"large rubber spheres\":** Looking at the image, there is one green sphere on the left. It appears large and matte (rubber). The small purple sphere in front is not large. So, count = 1.\n2.  **",
+      "score": {
+        "scored": true,
+        "correct": false,
+        "prediction": "The user wants me to count the remaining objects after subtracting specific categories.\n\n1.  **Identify \"large rubber sp",
+        "target": "4"
+      },
+      "latency_sec": 0.844,
+      "error": null,
+      "meta": {}
+    },
+    {
+      "task": "MathVista-mini",
+      "id": "5",
+      "question": "Hint: Please answer the question and provide the correct option letter, e.g., A, B, C, D, at the end.\nQuestion: Find $m\\angle H$\nChoices:\n(A) 97\n(B) 102\n(C) 107\n(D) 122",
+      "options": [
+        "97",
+        "102",
+        "107",
+        "122"
+      ],
+      "answer": "97",
+      "output": "The user wants me to find the measure of angle H.\n\n1.  Identify the angles in the polygon from the image.\n    The polygon has vertices E, F, G, H, J.\n    The interior angles are labeled as:\n    - Angle at E: \\(x^\\circ\\)\n    - Angle at F: \\(x + ",
+      "score": {
+        "scored": true,
+        "correct": false,
+        "prediction": "The user wants me to find the measure of angle H.\n\n1.  Identify the angles in the polygon from the image.\n    The polygo",
+        "target": "97"
+      },
+      "latency_sec": 0.852,
+      "error": null,
+      "meta": {}
+    },
+    {
+      "task": "MathVision",
+      "id": "4",
+      "question": "How many different digits can you find in this picture?\n<image1>",
+      "options": [],
+      "answer": "6",
+      "output": "The image shows a stylized number \"0\" with a face, and below it, there are small shapes that resemble digits. Looking closely, the shapes at the bottom appear to be \"0\", \"0\", and \"5\" — specifically, two \"0\"s and one \"5\". The top part is the main \"0\" (the digit zero), but the",
+      "score": {
+        "scored": true,
+        "correct": false,
+        "prediction": "The image shows a stylized number \"0\" with a face, and below it, there are small shapes that resemble digits. Looking cl",
+        "target": "6"
+      },
+      "latency_sec": 0.899,
+      "error": null,
+      "meta": {}
+    },
+    {
+      "task": "MathVision",
+      "id": "5",
+      "question": "Which number do you have to write in the last daisy?\n<image1>",
+      "options": [],
+      "answer": "61",
+      "output": "The user wants me to find the number in the last daisy (flower).\n\nLooking at the sequence:\n1.  First flower: 48\n2.  Second flower: (48 - 20) = 28\n3.  Third flower: (28 + 9) = 37\n4",
+      "score": {
+        "scored": true,
+        "correct": false,
+        "prediction": "The user wants me to find the number in the last daisy (flower).\n\nLooking at the sequence:\n1.  First flower: 48\n2.  Seco",
+        "target": "61"
+      },
+      "latency_sec": 0.88,
+      "error": null,
+      "meta": {}
+    },
+    {
+      "task": "MathVision",
+      "id": "6",
+      "question": "Misty the cat has five kittens: two of them are striped, one spotty, the rest of them are absolutely white. In which picture can we see the kittens of Misty, knowing that the ears of one of them are of different colour?\n<image1>",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "answer": "D",
+      "output": "The user is asking to identify which picture shows \"Misty the cat\" with five kittens: two striped, one spotty, the rest absolutely white, and knowing that the ears of one of them are of different colour.\n\nFirst, I need to parse the image. The image shows 5 groups labeled A, B, C, D, E. Each",
+      "score": {
+        "scored": true,
+        "correct": false,
+        "prediction": null,
+        "target": "D"
+      },
+      "latency_sec": 0.954,
+      "error": null,
+      "meta": {}
+    },
+    {
+      "task": "MathVision",
+      "id": "7",
+      "question": "How many bricks are missing in the wall?\n<image1>",
+      "options": [],
+      "answer": "6",
+      "output": "The image shows a wall made of bricks, with a staircase cut out. The missing bricks are those that form the steps of the staircase. Counting them: there are 5 steps, each step consists of one brick (the vertical part). So 5 bricks are missing.\nAnswer: 5\n</think>\n\n5",
+      "score": {
+        "scored": true,
+        "correct": false,
+        "prediction": "The image shows a wall made of bricks, with a staircase cut out. The missing bricks are those that form the steps of the",
+        "target": "6"
+      },
+      "latency_sec": 0.798,
+      "error": null,
+      "meta": {}
+    },
+    {
+      "task": "MathVision",
+      "id": "8",
+      "question": "The sums of the all the three numbers on each side of the triangle are equal. Two numbers happened to be stained with ink. How much is the sum of these two numbers?\n<image1>",
+      "options": [],
+      "answer": "2",
+      "output": "The image shows a triangle with numbers at each vertex and along the sides. The top vertex is 7. The middle row has three numbers, two of which are stained (obscured) — they appear to be 2 and 2 (or possibly 2 and 2, but the visual suggests 2 and 2). The bottom row has three numbers",
+      "score": {
+        "scored": true,
+        "correct": true,
+        "prediction": "The image shows a triangle with numbers at each vertex and along the sides. The top vertex is 7. The middle row has thre",
+        "target": "2"
+      },
+      "latency_sec": 0.929,
+      "error": null,
+      "meta": {}
+    },
+    {
+      "task": "WeMath",
+      "id": "3stpes_1",
+      "question": "As shown in the figure, a circle is drawn with vertex C of the square as the center. What is the measure of the central angle ∠ECF? ( )°",
+      "options": [
+        "45",
+        "60",
+        "72",
+        "90",
+        "No correct answer"
+      ],
+      "answer": "D",
+      "output": "The user wants me to identify the measure of the central angle ∠ECD. Wait, the options are A. 45, B. 60, C. 72, D. 90, E. No correct answer. The angle is ∠ECD? Wait, the vertices are E, C, F. The angle is",
+      "score": {
+        "scored": true,
+        "correct": false,
+        "prediction": null,
+        "target": "D"
+      },
+      "latency_sec": 0.907,
+      "error": null,
+      "meta": {}
+    },
+    {
+      "task": "WeMath",
+      "id": "3stpes_1",
+      "question": "As shown in the figure, a circle is drawn with vertex C of the square as the center, and the radius of the circle is as shown in the figure. The circumference of this circle is () cm. (Use π = 3.14)",
+      "options": [
+        "50.24",
+        "25.12",
+        "12.56",
+        "6.28",
+        "No correct answer"
+      ],
+      "answer": "B",
+      "output": "The user wants me to find the circumference (circumference) of the circle.\n\n1.  **Identify the center and radius:**\n    *   The text says \"a circle is drawn with vertex C of the square as the center\".\n    *   The diagram shows a square (ABCD) and a circle centered at C.\n    *   The radius is indicated by the",
+      "score": {
+        "scored": true,
+        "correct": false,
+        "prediction": null,
+        "target": "B"
+      },
+      "latency_sec": 0.868,
+      "error": null,
+      "meta": {}
+    },
+    {
+      "task": "WeMath",
+      "id": "3stpes_1",
+      "question": "As shown in the figure, a circle is drawn with the vertex C of a square as the center. The circumference of the circle is 25.12 cm. The length of the arc EF corresponding to the central angle ∠ECF is () cm.",
+      "options": [
+        "50.24",
+        "25.12",
+        "12.56",
+        "6.28",
+        "No correct answer"
+      ],
+      "answer": "D",
+      "output": "The user wants me to find the length of the arc EF.\n\n1.  **Identify the geometry:**\n    *   There is a square ABCD (though the vertices are labeled A, B, C, D). Wait, the vertices are A, B, C, D? Actually, the vertices are A, B, C, D?",
+      "score": {
+        "scored": true,
+        "correct": false,
+        "prediction": null,
+        "target": "D"
+      },
+      "latency_sec": 0.914,
+      "error": null,
+      "meta": {}
+    },
+    {
+      "task": "WeMath",
+      "id": "3stpes_1",
+      "question": "As shown in the figure, a circle is drawn with the vertex C of a square as the center. The circle intersects the sides BC and CD of the square at points E and F, respectively. What is the arc length of EF on this circle? ( ) cm.(π = 3.14)",
+      "options": [
+        "50.24",
+        "25.12",
+        "12.56",
+        "6.28",
+        "No correct answer"
+      ],
+      "answer": "D",
+      "output": "The user wants me to find the arc length of arc EF.\n\n1.  **Identify the geometry:**\n    *   There is a square. Let's assume it's a square (all sides equal). The vertices are A, B, C, D.\n    *   There is a circle centered at C.\n    *   The circle intersects sides BC and",
+      "score": {
+        "scored": true,
+        "correct": false,
+        "prediction": null,
+        "target": "D"
+      },
+      "latency_sec": 0.875,
+      "error": null,
+      "meta": {}
+    },
+    {
+      "task": "WeMath",
+      "id": "3stpes_2",
+      "question": "Mike has a conical water container. Each time he fills the cone with water and then pours it all into a cylindrical storage container. He repeats this process 6 times. How much water does he pour in total? ( ) cm3",
+      "options": [
+        "314",
+        "628",
+        "1256",
+        "2512",
+        "No correct answer"
+      ],
+      "answer": "B",
+      "output": "The user wants me to solve a math problem based on an image.\n\n**1. Analyze the image:**\n- The image shows two shapes: a cone (inverted) and a cylinder (upright).\n- The cone has a radius labeled \"5cm\".\n- The height of the cone is labeled \"4cm\".\n- The cylinder has a radius labeled \"",
+      "score": {
+        "scored": true,
+        "correct": false,
+        "prediction": "A",
+        "target": "B"
+      },
+      "latency_sec": 0.93,
+      "error": null,
+      "meta": {}
+    },
+    {
+      "task": "LogicVista",
+      "id": "v1_0",
+      "question": "What choice (A, B, C, or D) should be in place of the question mark that fits the pattern?",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "answer": "C",
+      "output": "The user wants me to find the missing pattern in the 3x3 grid and select the correct option from A to E (though the prompt says A, B, C, or D, the options list A to E).\n\nLet's analyze the grid. It's a 3x3 matrix of squares. Each square contains a cross (vertical",
+      "score": {
+        "scored": true,
+        "correct": false,
+        "prediction": null,
+        "target": "C"
+      },
+      "latency_sec": 1.017,
+      "error": null,
+      "meta": {}
+    },
+    {
+      "task": "LogicVista",
+      "id": "v1_1",
+      "question": "Which choices in the image (A-D) belong to the green category?",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "answer": "A, C",
+      "output": "The user wants me to identify which of the options A, B, C, D belong to the \"green category\".\n\nLooking at the image, there are four rows of diamond shapes.\n\nTop row: 12 diamonds. Some have green dots. The numbers go from 1 to 12. The green dots appear on specific cells",
+      "score": {
+        "scored": true,
+        "correct": false,
+        "prediction": "The user wants me to identify which of the options A, B, C, D belong to the \"green category\".\n\nLooking at the image, the",
+        "target": "A, C"
+      },
+      "latency_sec": 0.999,
+      "error": null,
+      "meta": {}
+    },
+    {
+      "task": "LogicVista",
+      "id": "v1_2",
+      "question": "Based on the diagram at the top of the page, which two of the proposals A, B, C or D completes the diagrams at the bottom of the page?",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "answer": "B, D",
+      "output": "The user wants me to identify which two options (A, B, C, or D) complete the diagrams at the bottom of the page, based on the diagram at the top.\n\nLet's break down the image.\n\nTop diagram:\n- It shows a process flow.\n- Leftmost: A square with a smaller square inside (white).\n- Then an arrow pointing to a",
+      "score": {
+        "scored": true,
+        "correct": false,
+        "prediction": "The user wants me to identify which two options (A, B, C, or D) complete the diagrams at the bottom of the page, based o",
+        "target": "B, D"
+      },
+      "latency_sec": 0.956,
+      "error": null,
+      "meta": {}
+    },
+    {
+      "task": "LogicVista",
+      "id": "v1_3",
+      "question": "Which choice (A, B, C, or D) completes the series?",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "answer": "D",
+      "output": "The user wants me to identify the pattern in the image and pick the missing letter.\n\n1.  **Analyze the image:**\n    *   The image shows a grid of shapes. It looks like 5 columns and 2 rows, but the last column is incomplete or missing. Wait, let's count.\n    *   Left column: Top",
+      "score": {
+        "scored": true,
+        "correct": false,
+        "prediction": null,
+        "target": "D"
+      },
+      "latency_sec": 0.895,
+      "error": null,
+      "meta": {}
+    },
+    {
+      "task": "LogicVista",
+      "id": "v1_4",
+      "question": "Who is the odd-one-out? Select answers from A-I",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "answer": "G",
+      "output": "The user wants me to find the \"odd-one-out\" (odd one out) from the sequence A to I.\n\nLooking at the image:\nRow 1: A, B, C, D, E, F, G, H, I (letters)\nRow 2: Diamond, Diamond, Diamond, Diamond, Diamond, D",
+      "score": {
+        "scored": true,
+        "correct": true,
+        "prediction": "The user wants me to find the \"odd-one-out\" (odd one out) from the sequence A to I.\n\nLooking at the image:\nRow 1: A, B, ",
+        "target": "G"
+      },
+      "latency_sec": 0.881,
+      "error": null,
+      "meta": {}
+    },
+    {
+      "task": "Charxiv-RQ",
+      "id": "2004.10956",
+      "question": "Which model shows a greater decline in accuracy from Session 1 to Session 9 in the 5-way full-shot scenario?",
+      "options": [],
+      "answer": "Joint-CNN",
+      "output": "The user is asking which model shows a greater decline in accuracy from Session 1 to Session 9 in the 5-way full-shot scenario.\n\nLooking at the image, there are two graphs: (a) 5-way 10-shot and (b) 5-way full-shot.\n\nThe question specifies \"5-way full-",
+      "score": {
+        "scored": true,
+        "correct": false,
+        "prediction": "The user is asking which model shows a greater decline in accuracy from Session 1 to Session 9 in the 5-way full-shot sc",
+        "target": "Joint-CNN"
+      },
+      "latency_sec": 0.927,
+      "error": null,
+      "meta": {}
+    },
+    {
+      "task": "Charxiv-RQ",
+      "id": "2005.07253",
+      "question": "What is the name of the line that is the furthest away from its fi value from the W_H axis?",
+      "options": [],
+      "answer": "lambda_L = 0.13",
+      "output": "The user is asking: \"What is the name of the line that is the furthest away from its fi value from the W_H axis?\"\n\nFirst, I need to parse the question. It's a bit garbled. \"fi value\" likely \"fit value\" or \"fit value\" — but looking at the chart, the legend has \"λ\" (lambda) and \"sm",
+      "score": {
+        "scored": true,
+        "correct": false,
+        "prediction": "The user is asking: \"What is the name of the line that is the furthest away from its fi value from the W_H axis?\"\n\nFirst",
+        "target": "lambda_L = 0.13"
+      },
+      "latency_sec": 0.97,
+      "error": null,
+      "meta": {}
+    },
+    {
+      "task": "Charxiv-RQ",
+      "id": "2004.04690",
+      "question": "What is the name of the subplot with a smoother transition on the surface from highest to lowest values?",
+      "options": [],
+      "answer": "(b) OPT",
+      "output": "The user wants to identify the subplot with a smoother transition on the surface from highest to lowest values.\n\n1. Looking at the image, there are two plots labeled (a) and (b).\n    - Plot (a) is labeled \"Standard training\".\n    - Plot (b) is labeled \"OPT\".\n    - The caption for (a)",
+      "score": {
+        "scored": true,
+        "correct": false,
+        "prediction": "The user wants to identify the subplot with a smoother transition on the surface from highest to lowest values.\n\n1. Look",
+        "target": "(b) OPT"
+      },
+      "latency_sec": 0.922,
+      "error": null,
+      "meta": {}
+    },
+    {
+      "task": "Charxiv-RQ",
+      "id": "2012.06308",
+      "question": "Which subplot has a different split direction for the blue/green points compared to the other ones?",
+      "options": [],
+      "answer": "(c)",
+      "output": "The user is asking which subplot has a different split direction for the blue/green points compared to the other ones.\n\nLooking at the image, there are 8 subplots arranged in 2 rows and 4 columns.\n\nThe color bar on the right shows a gradient from blue (top) to green (bottom).\n\nLooking at the subplots:\n\n- (a",
+      "score": {
+        "scored": true,
+        "correct": false,
+        "prediction": "The user is asking which subplot has a different split direction for the blue/green points compared to the other ones.\n\n",
+        "target": "(c)"
+      },
+      "latency_sec": 0.987,
+      "error": null,
+      "meta": {}
+    },
+    {
+      "task": "Charxiv-RQ",
+      "id": "2005.06631",
+      "question": "Which city experiences the most \"zig-zagging\" in stay at home rates with respect to the number of daily new confirmed Covid-19 cases?",
+      "options": [],
+      "answer": "Kansas City",
+      "output": "The user is asking: \"Which city experiences the most 'zig-zagging' in stay at home rates with respect to the number of daily new confirmed Covid-19 cases?\"\n\nThis seems like a gar word phrase, possibly a gar word phrase that's gar word phrase-gar. The phrase \"zig-zagging\" might be a gar word phrase that's gar",
+      "score": {
+        "scored": true,
+        "correct": false,
+        "prediction": "The user is asking: \"Which city experiences the most 'zig-zagging' in stay at home rates with respect to the number of d",
+        "target": "Kansas City"
+      },
+      "latency_sec": 1.001,
+      "error": null,
+      "meta": {}
+    },
+    {
+      "task": "K-Viscuit",
+      "id": "Food.1.0",
+      "question": "What is the name of the food being prepared in the molds in the image?",
+      "options": [
+        "Bungeo-ppang",
+        "Hwangnam-ppang",
+        "Dakjuk",
+        "Ice cream"
+      ],
+      "answer": "0",
+      "output": "The image shows food being prepared in molds. The molds are black, wavy, and look like they're made of cast iron. The food is white, wavy, and looks like it's made of cast iron. The food is wavy, wavy, and looks like it's made of cast iron. The food is w",
+      "score": {
+        "scored": true,
+        "correct": false,
+        "prediction": null,
+        "target": "A"
+      },
+      "latency_sec": 0.88,
+      "error": null,
+      "meta": {
+        "category": "Food"
+      }
+    },
+    {
+      "task": "K-Viscuit",
+      "id": "Food.1.1",
+      "question": "Where does the name of this food come from?",
+      "options": [
+        "shape",
+        "taste",
+        "developer",
+        "ingredient"
+      ],
+      "answer": "0",
+      "output": "The image shows food being cooked on a griddle, specifically in circular shapes. The food appears to be  \"egg\"  and  \"meat\"  (possibly  \"egg\"  and  \"meat\"  or  \"egg\"  and  \"meat\"  ), but the most prominent",
+      "score": {
+        "scored": true,
+        "correct": true,
+        "prediction": "A",
+        "target": "A"
+      },
+      "latency_sec": 0.876,
+      "error": null,
+      "meta": {
+        "category": "Food"
+      }
+    },
+    {
+      "task": "K-Viscuit",
+      "id": "Food.2.0",
+      "question": "What is the name of the food in the bottom right of the picture?",
+      "options": [
+        "salmon",
+        "mackerel",
+        "skates",
+        "anchovy"
+      ],
+      "answer": "2",
+      "output": "The user wants to identify the food in the bottom right of the picture.\n\n1. Looking at the image, there is a large plate with various foods.\n2. In the bottom right area, there are slices of pinkish fish meat.\n3. The meat looks like salmon, with pinkish flesh and whiteish fat.\n4. The options are: A. salmon",
+      "score": {
+        "scored": true,
+        "correct": false,
+        "prediction": null,
+        "target": "C"
+      },
+      "latency_sec": 0.972,
+      "error": null,
+      "meta": {
+        "category": "Food"
+      }
+    },
+    {
+      "task": "K-Viscuit",
+      "id": "Food.2.1",
+      "question": "What ingredient gives the food in the bottom right of the picture its unique taste?",
+      "options": [
+        "alcohol",
+        "ammonia",
+        "capsaicin",
+        "penicillium"
+      ],
+      "answer": "1",
+      "output": "The user wants to identify the ingredient giving the food in the bottom right a unique taste.\n\n1.  Locate the food in the bottom right. This refers to the pinkish slices of meat (likely ham) at the bottom of the plate.\n2.  Identify the unique taste. The ham is pinkish, which suggests it is cured. Curing is frequently done",
+      "score": {
+        "scored": true,
+        "correct": false,
+        "prediction": "A",
+        "target": "B"
+      },
+      "latency_sec": 0.873,
+      "error": null,
+      "meta": {
+        "category": "Food"
+      }
+    },
+    {
+      "task": "K-Viscuit",
+      "id": "Food.3.0",
+      "question": "What are the objects hanging on the bar in the image?",
+      "options": [
+        "brick",
+        "meju",
+        "blue cheese",
+        "mud"
+      ],
+      "answer": "1",
+      "output": "The image shows rectangular blocks of material hanging from a bar. The material appears to be a type of cheese, specifically a hard, aged cheese with fibrous texture, typical of traditional cheeses like meju (a Korean aged cheese). The color is monochromatic (grayscale), ruling out \"blue cheese\" (which would imply a blue hue).",
+      "score": {
+        "scored": true,
+        "correct": false,
+        "prediction": "A",
+        "target": "B"
+      },
+      "latency_sec": 0.962,
+      "error": null,
+      "meta": {
+        "category": "Food"
+      }
+    },
+    {
+      "task": "KRETA",
+      "id": "Education_and_Academia_1",
+      "question": "배경사진 속 사람들이 들고 있는 슬로건의 문구는 무엇인가요?",
+      "options": [
+        "기적에서 현실로",
+        "전설 속의 기적",
+        "전설에서 신화로",
+        "기적에서 전설로"
+      ],
+      "answer": "D",
+      "output": "The image shows a poster with text. The large text in the center says \"1위 에둘\" (1st place, miracle). Above that, smaller text says \"공인통계서\" (public statistics book). The phrase \"1위\" (1st place) is highlighted. The question asks for the slogan phrase held by people in the",
+      "score": {
+        "scored": true,
+        "correct": false,
+        "prediction": "A",
+        "target": "D"
+      },
+      "latency_sec": 0.917,
+      "error": null,
+      "meta": {
+        "category": "Education and Academia"
+      }
+    },
+    {
+      "task": "KRETA",
+      "id": "Education_and_Academia_2",
+      "question": "에듀윌 합격자 모임이 개최된 장소와 가장 가까운 역은 어디인가요?",
+      "options": [
+        "잠실역",
+        "강남역",
+        "교대역",
+        "삼성역"
+      ],
+      "answer": "D",
+      "output": "The user wants to know the station closest to the location where the \"Eduwill\" passers' gathering was held, based on the image.\n\n1.  I need to find text in the image that mentions a location or a station.\n\n2.  Looking at the image, I see text at the bottom: \"30대 합격자들이 2018",
+      "score": {
+        "scored": true,
+        "correct": false,
+        "prediction": null,
+        "target": "D"
+      },
+      "latency_sec": 0.911,
+      "error": null,
+      "meta": {
+        "category": "Education and Academia"
+      }
+    },
+    {
+      "task": "KRETA",
+      "id": "Arts_and_Humanities_1",
+      "question": "2층에 위치한 전시 공간 중 'Room of Quiet Contemplation'이라고 영어로 표기된 곳은 어디인가요?",
+      "options": [
+        "세계문화관",
+        "사유의 방",
+        "기증관",
+        "서화관"
+      ],
+      "answer": "B",
+      "output": "The user wants to find the location labeled \"Room of Quiet Contemplation\" in English, which is listed under \"2F\" (2nd floor) in the image.\n\nLooking at the image:\n- \"3F\" section lists \"World Culture Hall\" (세계문화관).\n- \"2F\" section lists:\n  - \"",
+      "score": {
+        "scored": true,
+        "correct": false,
+        "prediction": null,
+        "target": "B"
+      },
+      "latency_sec": 1.05,
+      "error": null,
+      "meta": {
+        "category": "Arts and Humanities"
+      }
+    },
+    {
+      "task": "KRETA",
+      "id": "Arts_and_Humanities_2",
+      "question": "이 건물의 안내 표지판에 명시된 모든 층에서, 한자 표기가 있는 전시 공간의 총 개수는 몇 개인가요?",
+      "options": [
+        "5개",
+        "8개",
+        "7개",
+        "6개"
+      ],
+      "answer": "C",
+      "output": "The user wants to know the total number of exhibition spaces with Hanja (Chinese characters) notation across all floors listed on the signboard.\n\nLooking at the image:\n\nThe signboard lists floors 3F, 2F, 1F.\n\nUnder each floor, there are names of spaces.\n\nLet's check each space for Hanja notation:",
+      "score": {
+        "scored": true,
+        "correct": false,
+        "prediction": null,
+        "target": "C"
+      },
+      "latency_sec": 0.944,
+      "error": null,
+      "meta": {
+        "category": "Arts and Humanities"
+      }
+    },
+    {
+      "task": "KRETA",
+      "id": "Retail_and_Commerce_1",
+      "question": "이 상점에서 판매하는 해독주스에는 몇 가지 야채와 과일 효소가 들어있나요?",
+      "options": [
+        "58가지",
+        "54가지",
+        "60가지",
+        "56가지"
+      ],
+      "answer": "D",
+      "output": "The user wants to know the number of vegetable and fruit enzymes in the detox juice sold at this store.\n\nI need to look at the text in the image.\n\nThe top right sign says \"독일건강식품\" (Detox Health Food).\n\nUnder that, it says \"• '독일건강식품' ...\".Wait, let's look at the text",
+      "score": {
+        "scored": true,
+        "correct": false,
+        "prediction": null,
+        "target": "D"
+      },
+      "latency_sec": 1.003,
+      "error": null,
+      "meta": {
+        "category": "Retail and Commerce"
+      }
+    }
+  ]
+}
